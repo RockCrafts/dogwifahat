@@ -57,7 +57,7 @@ function getImg() {
 //img1.src =reader.readAsDataURL(document.getElementById('input').files[0]);
 
     //img1.src = inputValue;
-    img2.src = "https://media.discordapp.net/attachments/659559649552629772/660513964219695114/image0.png";
+    img2.src = document.getElementById('img').src;
     img1.onload = function() {
         ctx.drawImage(img1, 0, 0, x, y);
     }
