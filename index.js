@@ -57,7 +57,8 @@ function getImg() {
 //img1.src =reader.readAsDataURL(document.getElementById('input').files[0]);
 
     //img1.src = inputValue;
-    img2.src = document.getElementById('img').src;
+    //img2.src = document.getElementById('img').src;
+    img2.src = "Dog.png"
     img1.onload = function() {
         ctx.drawImage(img1, 0, 0, x, y);
     }
