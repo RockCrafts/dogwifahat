@@ -61,6 +61,7 @@ function getImg() {
     img1.onload = function() {
         ctx.drawImage(img1, 0, 0, x, y);
     }
+
     img2.onload = function() {
         ctx.drawImage(img2, 0, 0, x, y);
     }
