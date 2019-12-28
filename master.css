@@ -1,0 +1,11 @@
+body {
+  text-align: center;
+  background-color: #f0e3c5;
+}
+img {
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+}
