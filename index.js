@@ -56,6 +56,7 @@ function download2() {
         lnk.fireEvent("onclick");
     }
 }
+
 function updateBoxes(){
   var mustacheBox = document.getElementById("mustacheCheck");
   var blackBox = document.getElementById("blackCheck");
@@ -74,6 +75,7 @@ blackO = false;
 }
 
 }
+
 function previewFile() {
   var preview = document.querySelector('img');
   var file    = document.querySelector('input[type=file]').files[0];
@@ -117,6 +119,7 @@ img2.crossOrigin="anonymous";
 img3.crossOrigin="anonymous";
 
 img4.crossOrigin="anonymous";
+
     img1.src = image;
     img3.src = "Mustache.png"
     if(blackO){
@@ -132,7 +135,9 @@ img4.crossOrigin="anonymous";
 
     }
 
+
     img2.onload = function() {
+
 
 
         ctx.drawImage(img2, 0, 0, x, y);
@@ -143,6 +148,7 @@ if(mustaceO){
             ctx.drawImage(img3, 124, 340, 300,100);
 }
     }
+
 
 
 }
