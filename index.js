@@ -26,6 +26,7 @@
 var image = "";
 var mustaceO = false;
 var blackO = false;
+var flippedO = false;
 function preloadimages(arr){
     var newimages=[], loadedimages=0
     var postaction=function(){}
@@ -86,7 +87,7 @@ function download2() {
 function updateBoxes(){
   var mustacheBox = document.getElementById("mustacheCheck");
   var blackBox = document.getElementById("blackCheck");
-
+  var flippedBox = document.getElementById("flippedCheck");
   if(mustacheBox.checked){
 mustaceO = true;
 
@@ -100,8 +101,14 @@ blackO = true;
 blackO = false;
 }
 
-}
 
+if(flippedBox.checked){
+flippedO = true;
+
+}else{
+  flippedO = false;
+}
+}
 function previewFile() {
   var preview = document.querySelector('img');
   var file    = document.querySelector('input[type=file]').files[0];
@@ -153,6 +160,11 @@ img3.crossOrigin="anonymous";
     else{
     img2.src = "Dog.png"
   }
+  if(flippedO){
+  ctx.translate(0, y);
+ctx.scale(1, -1);
+}
+
   preloadimages([image, "Mustache.png", "BlackHat.png", "Dog.png"]).done(function(images){
 
   //  img1.onload = function() {
