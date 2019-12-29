@@ -26,6 +26,32 @@
 var image = "";
 var mustaceO = false;
 var blackO = false;
+function preloadimages(arr){
+    var newimages=[], loadedimages=0
+    var postaction=function(){}
+    var arr=(typeof arr!="object")? [arr] : arr
+    function imageloadpost(){
+        loadedimages++
+        if (loadedimages==arr.length){
+            postaction(newimages) //call postaction and pass in newimages array as parameter
+        }
+    }
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+        newimages[i].onload=function(){
+            imageloadpost()
+        }
+        newimages[i].onerror=function(){
+            imageloadpost()
+        }
+    }
+    return { //return blank object with done() method
+        done:function(f){
+            postaction=f || postaction //remember user defined callback functions to be called when images load
+        }
+    }
+}
 function download2() {
   var canvas = document.getElementById('canvas1');
   var filename = 'download.png';
@@ -111,7 +137,6 @@ function getImg() {
     var img1 = new Image();
     var img2 = new Image();
 var img3 = new Image();
-var img4 = new Image();
 img1.crossOrigin="anonymous";
 
 img2.crossOrigin="anonymous";
@@ -128,17 +153,17 @@ img4.crossOrigin="anonymous";
     else{
     img2.src = "Dog.png"
   }
-    img1.onload = function() {
+  preloadimages([image, "Mustache.png", "BlackHat.png", "Dog.png"]).done(function(images){
+
+  //  img1.onload = function() {
       if(!blackO){
         ctx.drawImage(img1, 0, 0, x, y);
       }
 
-    }
+  //  }
 
 
-    img2.onload = function() {
-
-
+  //  img2.onload = function() {
 
         ctx.drawImage(img2, 0, 0, x, y);
         if(blackO){
@@ -147,8 +172,7 @@ img4.crossOrigin="anonymous";
 if(mustaceO){
             ctx.drawImage(img3, 124, 340, 300,100);
 }
-    }
+})
 
-
-
+//)}
 }
