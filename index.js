@@ -143,7 +143,7 @@ img2.crossOrigin="anonymous";
 
 img3.crossOrigin="anonymous";
 
-//img4.crossOrigin="anonymous";
+
 
     img1.src = image;
     img3.src = "Mustache.png"
