@@ -154,7 +154,7 @@ img3.crossOrigin="anonymous";
 
     img1.src = image;
     img3.src = "Mustache.png"
-    if(blackO){ 
+    if(blackO){
       img2.src = "BlackHat.png"
     }
     else{
@@ -186,6 +186,6 @@ if(mustaceO){
 }
 })
 
-<?php echo addToCounter(); ?>
+
 //)}
 }
