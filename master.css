@@ -20,22 +20,22 @@ button {
   background-color: #4cd5dc; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 17px 17px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 6px;
+  margin-top: 6px;
 }
 input {
   background-color: #4cd5dc; /* Green */
   border: none;
   color: white;
-  padding: 14px 8px;
-
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 6px;
+  margin-top: 6px;
+
 }
