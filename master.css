@@ -1,6 +1,8 @@
 body {
   text-align: center;
-  background-color: #f0e3c5;
+  font-family: monospace;
+  background-color: #00ffff30;
+
 }
 img {
   display: block;
@@ -9,7 +11,31 @@ img {
   width: auto;
   height: auto;
 }
+
 .downloadClick{
   width: auto;
   height: 200;
+}
+button {
+  background-color: #4cd5dc; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px;
+}
+input {
+  background-color: #4cd5dc; /* Green */
+  border: none;
+  color: white;
+  padding: 14px 8px;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px;
 }

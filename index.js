@@ -137,6 +137,7 @@ var settings = document.getElementById("settings");
 settings.style.display = "none";
 function showSettings(){
 
+//  background-color: #f0e3c5;
   if (settings.style.display === "none") {
     settings.style.display = "block";
   } else {
