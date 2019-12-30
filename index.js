@@ -186,5 +186,6 @@ if(mustaceO){
 }
 })
 
+<?php echo addToCounter(); ?>
 //)}
 }
