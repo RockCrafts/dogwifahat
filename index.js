@@ -27,6 +27,7 @@ var image = "";
 var mustaceO = false;
 var blackO = false;
 var flippedO = false;
+var woolO = false;
 function preloadimages(arr){
     var newimages=[], loadedimages=0
     var postaction=function(){}
@@ -83,11 +84,29 @@ function download2() {
         lnk.fireEvent("onclick");
     }
 }
-
-function updateBoxes(){
+function fixBoxes(name){
   var mustacheBox = document.getElementById("mustacheCheck");
   var blackBox = document.getElementById("blackCheck");
   var flippedBox = document.getElementById("flippedCheck");
+  var woolBox = document.getElementById("woolCheck");
+var box = document.getElementById(name);
+if(name=="blackBox" && woolBox.checked){
+  blackBox.checked = false;
+  window.alert("Can not have both Wool Hat and Black Hat!");
+}
+else if (name=="woolBox" && blackBox.checked) {
+  woolBox.checked = false;
+
+  window.alert("Can not have both Wool Hat and Black Hat!");
+}
+}
+function updateBoxes(name){
+  fixBoxes(name)
+  var mustacheBox = document.getElementById("mustacheCheck");
+  var blackBox = document.getElementById("blackCheck");
+  var flippedBox = document.getElementById("flippedCheck");
+  var woolBox = document.getElementById("woolCheck");
+
   if(mustacheBox.checked){
 mustaceO = true;
 
@@ -108,6 +127,21 @@ flippedO = true;
 }else{
   flippedO = false;
 }
+if(woolBox.checked){
+  woolO = true;
+}else{
+  woolO = false;
+}
+}
+var settings = document.getElementById("settings");
+settings.style.display = "none";
+function showSettings(){
+
+  if (settings.style.display === "none") {
+    settings.style.display = "block";
+  } else {
+    settings.style.display = "none";
+  }
 }
 function previewFile() {
   var preview = document.querySelector('img');
@@ -144,11 +178,6 @@ function getImg() {
     var img1 = new Image();
     var img2 = new Image();
 var img3 = new Image();
-img1.crossOrigin="anonymous";
-
-img2.crossOrigin="anonymous";
-
-img3.crossOrigin="anonymous";
 
 
 
@@ -157,19 +186,32 @@ img3.crossOrigin="anonymous";
     if(blackO){
       img2.src = "BlackHat.png"
     }
+    else if(woolO){
+      img2.src = "WoolHat.png";
+    }
     else{
-    img2.src = "Dog.png"
+    img2.src = "Dog.png";
   }
+  img1.crossOrigin="anonymous";
+
+  img2.crossOrigin="anonymous";
+
+  img3.crossOrigin="anonymous";
+
   if(flippedO){
   ctx.translate(0, y);
 ctx.scale(1, -1);
 }
-
-  preloadimages([image, "Mustache.png", "BlackHat.png", "Dog.png"]).done(function(images){
+var offsetX = parseInt(document.getElementById("offsetX").value);
+var offsetY = parseInt(document.getElementById("offsetY").value);
+var offsetMath1 = offsetX+227;
+var offsetMath2 = offsetY+150;
+var offsetMath3 = offsetY+135;
+  preloadimages([image, "Mustache.png", "BlackHat.png", "Dog.png", "WoolHat.png"]).done(function(images){
 
   //  img1.onload = function() {
-      if(!blackO){
-        ctx.drawImage(img1, 0, 0, x, y);
+      if(!blackO || !woolO){
+        ctx.drawImage(img1, offsetX, offsetY, x, y);
       }
 
   //  }
@@ -179,13 +221,17 @@ ctx.scale(1, -1);
 
         ctx.drawImage(img2, 0, 0, x, y);
         if(blackO){
-        ctx.drawImage(img1, 227, 150, 80, 80)
+
+        ctx.drawImage(img1, offsetMath1, offsetMath2, 80, 80);
+      }
+      if(woolO){
+          ctx.drawImage(img1, offsetMath1, offsetMath3, 80, 80);
       }
 if(mustaceO){
             ctx.drawImage(img3, 124, 340, 300,100);
 }
 })
- 
+
 
 //)}
 }
