@@ -4,7 +4,33 @@ body {
   background-color: #00ffff30;
 
 }
-img {
+.topnav {
+  overflow: hidden;
+  background-color: #245759;
+}
+.social img{
+  height: 13px;
+  width: 13px;
+
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a.active {
+  background-color: #ffff;
+  color: black;
+}
+.topnav a:hover{
+  background-color: #afff;
+  color: black;
+}
+.index img {
   display: block;
   max-width:230px;
   max-height:95px;
@@ -16,6 +42,21 @@ img {
   width: auto;
   height: 200;
 }
+.row {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.row img{
+
+  display: table-cell;
+  flex-wrap: wrap;
+  padding: 4px 4px;
+  width: 150px;
+  height: 150px;
+vertical-align: middle;
+}
+
+
 button {
   background-color: #4cd5dc; /* Green */
   border: none;

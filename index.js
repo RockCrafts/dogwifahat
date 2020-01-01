@@ -206,8 +206,8 @@ ctx.scale(1, -1);
 var offsetX = parseInt(document.getElementById("offsetX").value);
 var offsetY = parseInt(document.getElementById("offsetY").value);
 var offsetMath1 = offsetX+227;
-var offsetMath2 = offsetY-150;
-var offsetMath3 = offsetY-135;
+var offsetMath2 = offsetY+150;
+var offsetMath3 = offsetY+135;
   preloadimages([image, "Mustache.png", "BlackHat.png", "Dog.png", "WoolHat.png"]).done(function(images){
 
   //  img1.onload = function() {
