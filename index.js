@@ -205,6 +205,7 @@ ctx.scale(1, -1);
 }
 var offsetX = parseInt(document.getElementById("offsetX").value);
 var offsetY = parseInt(document.getElementById("offsetY").value);
+var zoom = parseInt(document.getElementById("zoom").value);
 var offsetMath1 = offsetX+227;
 var offsetMath2 = offsetY+150;
 var offsetMath3 = offsetY+135;
@@ -212,7 +213,7 @@ var offsetMath3 = offsetY+135;
 
   //  img1.onload = function() {
       if(!blackO || !woolO){
-        ctx.drawImage(img1, offsetX, offsetY, x, y);
+        ctx.drawImage(img1, offsetX, offsetY, x+zoom, y+zoom);
       }
 
   //  }
@@ -223,10 +224,10 @@ var offsetMath3 = offsetY+135;
         ctx.drawImage(img2, 0, 0, x, y);
         if(blackO){
 
-        ctx.drawImage(img1, offsetMath1, offsetMath2, 80, 80);
+        ctx.drawImage(img1, offsetMath1, offsetMath2, 80+zoom, 80+zoom);
       }
       if(woolO){
-          ctx.drawImage(img1, offsetMath1, offsetMath3, 80, 80);
+          ctx.drawImage(img1, offsetMath1, offsetMath3, 80+zoom, 80+zoom);
       }
 if(mustaceO){
             ctx.drawImage(img3, 124, 340, 300,100);
